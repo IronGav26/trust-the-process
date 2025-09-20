@@ -81,7 +81,7 @@
         });
 
         async function joinGame() {
-            if (!isAuthReady) return;
+            if (!isAuthReady || !currentUserId) return;
             const playerDocRef = doc(db, PLAYERS_PATH, currentUserId);
             const playerData = {
                 userId: currentUserId,
